@@ -1,0 +1,32 @@
+class Solution {
+public:
+    vector<vector<int>> merge(vector<vector<int>>& intervals) {
+        //result
+        vector<vector<int>> result; // you can also use a vector of pairs
+        //base case 
+        if(intervals.size()==0){
+            return result;
+        }
+        // sort the intervals 
+        sort(intervals.begin(),intervals.end());
+        
+        //temp variable to store the intermediate data
+        
+        vector<int> temp ;
+        temp = intervals[0];
+        
+        //start from first interval 
+        for(auto it:intervals) {
+            if(it[0]<=temp[1]){
+                temp[1] = max(it[1],temp[1]);
+            }else {
+                result.push_back(temp);
+                temp = it ;                
+            }            
+        }
+        //push the last element
+        result.push_back(temp);
+        
+        return result;
+    }
+};
