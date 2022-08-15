@@ -1,7 +1,7 @@
 // video explanation >> tech dose
 //based on merge sort ,
 //one aditional step is added to count the inversions while merging 
-
+https://takeuforward.org/data-structure/count-inversions-in-an-array/
 
 int merge(int arr[],int temp[],int left,int mid,int right)
 {
