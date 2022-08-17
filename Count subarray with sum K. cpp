@@ -1,0 +1,41 @@
+//we calculate prefix sum , 
+//if prefix sum is k , inc count 
+//add it to has map with suj as key and count as value
+//while finding the preifx sum and comparing it to K , we also need to see if there is an element in hash map with value Curr_sum-k , if exists add 
+//add that count . for ex take 3,4,7 , 8 and k = 7 , initially we start with 3 and then , sum is 7 we inc count and continue to index 2 , prefix sum
+//is 14 , we dont inc count , but there eixst a single element 7 which is K , so we need to check the hash map to see if currsum-k eixtstor not which 
+//is a single element or a sub array 
+
+class Solution {
+public:
+    int subarraySum(vector<int>& nums, int k) {
+        
+        //For fast I/O in C++
+        ios_base::sync_with_stdio(false);
+        cin.tie(NULL);
+        
+        int n = nums.size();
+        if(n==0)
+            return 0;
+        
+        unordered_map<int,int> mymap;   //Key = PrefixSUM, Value = Count of PrefixSUM.
+        int currSUM = 0;
+        int i = 0;
+        int count = 0;
+        
+        while(i<n)
+        {
+            currSUM += nums[i];
+            
+            if(currSUM == k)    //We found a new subArray with SUM = k
+                count += 1;
+            
+            if(mymap.find(currSUM-k)!=mymap.end())
+                count += mymap[currSUM-k];
+            
+            mymap[currSUM] += 1;
+            i += 1;
+        }
+        return count;
+    }
+};
