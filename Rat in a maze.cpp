@@ -1,3 +1,4 @@
+ https://takeuforward.org/data-structure/rat-in-a-maze/
 Rat in a Maze
 
 Consider a rat placed at (0, 0) in a square matrix of order N * N. It has to reach the destination at (N – 1, N – 1). 
