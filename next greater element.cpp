@@ -1,3 +1,5 @@
+//https://takeuforward.org/data-structure/next-greater-element-using-stack/
+
 class Solution {
 public:
     vector<int> nextGreaterElements(vector<int>& nums) {
