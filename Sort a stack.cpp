@@ -1,17 +1,29 @@
+//tmp stack is always in order 
+
+
 stack<int> sortStack(stack<int> &input)
 {
     stack<int> tmpStack;
  
     while (!input.empty())
     {
-     int temp = input.top();
-     input.pop();
-     
-     while(!tmpStack.empty() and tmpStack.top()>temp){
-       input.push(tmpStack.top());
-       tmpStack.pop();
+        // pop out the first element
+        int tmp = input.top();
+        input.pop();
+ 
+        // while temporary stack is not empty and top
+        // of stack is greater than temp
+        while (!tmpStack.empty() && tmpStack.top() > tmp)
+        {
+            // pop from temporary stack and push
+            // it to the input stack
+            input.push(tmpStack.top());
+            tmpStack.pop();
+        }
+ 
+        // push temp in temporary of stack
+        tmpStack.push(tmp);
     }
-      tmpStack.push(temp);
-   }
+ 
     return tmpStack;
 }
