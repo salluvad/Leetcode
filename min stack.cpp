@@ -1,7 +1,7 @@
 class MinStack {
     // there are two methods
     // 1/use a pair {val, min} to insert into the stack 
-    // 2. use a modified value toinsert if val is less tha min striver
+    // 2. use a modified value toinsert if val is less tha min striver.  https://takeuforward.org/data-structure/implement-min-stack-o2n-and-on-space-complexity/
 stack<pair<int,int>> s;
 
 int min;
