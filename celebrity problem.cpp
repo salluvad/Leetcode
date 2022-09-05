@@ -41,3 +41,37 @@ public:
                return c;
     }
 };
+
+
+>>>>> using graph
+
+int findCelebrity(int n)
+{
+    //the graph needs not be constructed
+    //as the edges can be found by
+    //using knows function
+     
+    //degree array;
+    int indegree[n]={0},outdegree[n]={0};
+     
+    //query for all edges
+    for(int i=0; i<n; i++)
+    {
+        for(int j=0; j<n; j++)
+        {
+            int x = knows(i,j);
+             
+            //set the degrees
+            outdegree[i]+=x;
+            indegree[j]+=x;
+        }
+    }
+     
+    //find a person with indegree n-1
+    //and out degree 0
+    for(int i=0; i<n; i++)
+    if(indegree[i] == n-1 && outdegree[i] == 0)
+        return i;
+     
+    return -1;
+}
