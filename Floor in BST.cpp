@@ -4,6 +4,7 @@
 
 int floor(Node* root , int key){
  int floor = -1;
+ while(root){
   if(root->val == key){
    floor = root->val;
     return floor;
@@ -14,6 +15,7 @@ int floor(Node* root , int key){
   } else {
    root = root->left; 
   }
+ }
   return floor;
   
 }
