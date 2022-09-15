@@ -41,3 +41,43 @@ void Graph::DFS()
         if (visited[i.first] == false)
             DFSUtil(i.first);
 }
+
+
+
+
+/////////////////
+gfg submission 
+/////////////////
+
+
+class Solution {
+    void dfs(int i ,vector<int> adj[],bool vis[],vector<int>& ans){
+         //store it and mark it visi
+         ans.push_back(i);
+         vis[i] = true;
+         for(auto it:adj[i]){
+             if(!vis[it]){
+                 dfs(it,adj,vis,ans);
+             }
+         }
+         return;
+        
+    }
+  public:
+    // Function to return a list containing the DFS traversal of the graph.
+    vector<int> dfsOfGraph(int V, vector<int> adj[]) {
+        // Code here
+        bool vis[V];
+        vector<int> ans;
+        for(int i = 0 ;i<V;i++){
+            vis[i]=0;
+        }
+         for(int i = 0 ;i<V;i++){
+             if(!vis[i]){
+                 dfs(i,adj,vis,ans);
+             }
+         }
+        return ans;
+        
+    }
+};
