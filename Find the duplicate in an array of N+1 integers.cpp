@@ -13,3 +13,22 @@ int findDuplicate(vector < int > & arr) {
   }
   return 0;
 }
+
+// O(1) space optimized approcach , using slow and fast pointer method  , just like find loop in the linked list , 
+//startng node of loop is duplicate element 
+//
+
+int findDuplicate(vector < int > & nums) {
+  int slow = nums[0];
+  int fast = nums[0];
+  do {
+    slow = nums[slow];
+    fast = nums[nums[fast]];
+  } while (slow != fast);
+  fast = nums[0];
+  while (slow != fast) {
+    slow = nums[slow];
+    fast = nums[fast];
+  }
+  return slow;
+}
