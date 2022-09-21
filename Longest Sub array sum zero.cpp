@@ -12,6 +12,12 @@ Explanation: The following subarrays sum to zero:
 Since we require the length of the longest subarray, our answer is 5!
 */
 
+we know that the sum of subarray(i, j) = S, and we also know that sum of subarray(i, x) = S where i < x < j. 
+ We can conclude that the sum of subarray(x+1, j) = 0.
+
+So in this problem, we’ll store the prefix sum of every element, and if we observe that 2 elements have same prefix sum, 
+we can conclude that the 2nd part of this subarray sums to zero
+
 int maxLen(int A[], int n)
 {
     // Your code here
