@@ -26,7 +26,7 @@ public:
         iter->next = head;
         //second round 
         iter = head;
-        // find one element before the new head
+        // find one element before the new head            /////////// to rotate left , run the loop k-1 times
         for (int i = 0; i < len - (k % len) - 1; ++i) {
             iter = iter->next;
         }
