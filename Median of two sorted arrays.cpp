@@ -28,7 +28,8 @@ https://leetcode.com/problems/median-of-two-sorted-arrays/discuss/1669917/C%2B%2
         l = partition1 + 1;
     }
 
-    throw;
+    //throw;  
+  return 0
   }
     
 };
