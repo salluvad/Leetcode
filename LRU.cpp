@@ -12,7 +12,7 @@ class LRU {
   int get(int key){
     if(hmap.fond(key)!=hmap.end()){
       put(key,hmap[key]->second);
-      return hmap[key]-<second;
+      return hmap[key]->second;
   }
     return -1;
   }
