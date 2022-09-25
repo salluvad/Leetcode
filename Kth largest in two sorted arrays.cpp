@@ -11,7 +11,8 @@ int kthelement(int arr1[], int arr2[], int m, int n, int k) {
         return kthelement(arr2, arr1, n, m, k); 
     }
         
-    int low = max(0,k-m), high = min(k,n);
+    int low = max(0,k-m), high = min(k,n);   /// edge case , if K is < m , how many max elements we can pick from arr1 ? its K elements 
+                                              /// second edge case , if K is > n . how many elements we can pick from arr2 ? minimum n elements 
         
     while(low <= high) {
         int cut1 = (low + high) >> 1; 
