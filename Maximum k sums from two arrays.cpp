@@ -1,3 +1,8 @@
+https://www.geeksforgeeks.org/k-maximum-sum-combinations-two-arrays/#:~:text=Given%20two%20equally%20sized%20arrays,all%20the%20possible%20sum%20combinations.
+
+Approach 1: find all possible two sums and add it to max heap and pop k times >>>o(n2)
+
+
 Approach 2 (Sorting, Max heap, Map) : 
 
 Instead of brute-forcing through all the possible sum combinations, we should find a way to limit our search space to possible candidate sum combinations. 
