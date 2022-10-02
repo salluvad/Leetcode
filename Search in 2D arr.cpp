@@ -32,7 +32,11 @@ public:
         
         while(left<=right){
             mid = (left+right)/2;
-            mid_ele = matrix[mid/n][mid%n];
+            mid_ele = matrix[mid/n][mid%n];    /*
+             lets say you have a matrix M with 4 rows and 3 columns. When we want to access M[2][1], the way the memory address is calculated is 2*3+1 = 7.
+             so you are just reversing the calculation , 
+             row number is given by 7/3 = 2, and column is the offset in that row so for 7th element it is 7%3 = 1.
+            */
             if(target== mid_ele){
                 return true;
             } else {
