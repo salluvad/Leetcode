@@ -15,6 +15,19 @@ Explanation: Jump 1 step from index 0 to 1, then 3 steps to the last index.
 
 ///
 
+  
+bool greedy(vector<int>& nums){.     ?>>>>>> this is greedy way of solving , this works too
+        int n = nums.size();
+        int goal = n-1;
+        
+        for(int i = n-1 ; i>=0;i--){
+            if(i+nums[i]>=goal){
+                goal = i;
+            }
+        }
+        
+        return (goal==0);
+  }
 
 class Solution {
 public:
