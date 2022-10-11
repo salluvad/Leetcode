@@ -93,7 +93,7 @@ public:
             if(midnode){
                 prev_of_slow_ptr->next = midnode;
                 midnode->next = second_half;
-            } else prev_of_slow_ptr->next = midnode;
+            } else prev_of_slow_ptr->next = seocnd_half;
             
         }
       
