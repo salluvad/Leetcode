@@ -1,0 +1,10 @@
+https://david-peter.de/parachuting-robots/
+
+
+
+start: left
+       skipNext
+       goto start
+fastL: left
+       left
+       goto fastL
