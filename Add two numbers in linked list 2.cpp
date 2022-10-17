@@ -46,7 +46,8 @@ public:
             
             carry = (carry+x1+x2)/10;
             
-            
+            // appending in the beginning of the final ans list,
+            // this way we do not have to reverse in the end
             ListNode* curr = new ListNode(val);
             curr->next = res;
             res = curr;
