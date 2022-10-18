@@ -64,7 +64,7 @@ public:
         // create copy nodes and link them with old nodes's next pointers 
         while(curr){
             Node* temp = curr->next;
-            Node* new_node= new Node(curr->val,temp,NULL);
+            Node* new_node= new Node(curr->val,temp,NULL);   // this constructor sets the next of the node to temp
             curr->next = new_node;
             curr = new_node->next;
         }
