@@ -28,8 +28,9 @@ public:
         //with that partion in the set in previous call
         if(start == s.length()){
             return true;
-        }
-        //use the previous calc val
+        }                                                       /// Time complexity is n(len of string) * n(for loop for each partion) * n (substr method)
+        //use the previous calc val.                             // so total TC is o(n^3) , space is for memo array o(n) // biggest recursion tree + space for 
+                                                                 // memo array
         if(memo[start]!=-1){
             return memo[start];
         }
@@ -46,3 +47,4 @@ public:
         
     }
 };
+
