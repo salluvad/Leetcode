@@ -13,7 +13,10 @@ int kthelement(int arr1[], int arr2[], int m, int n, int k) {
         
     int low = max(0,k-m), high = min(k,n);   /// edge case , if K is < m , how many max elements we can pick from arr1 ? its K elements 
                                               /// second edge case , if K is > n . how many elements we can pick from arr2 ? minimum n elements 
-        
+        /*
+         Here n = 4 and m=6 and k=7. Since k>m , so we can't take 0 elements as the lowest no. of elements picked from array1 . 
+         It should be  (k-m) i.e. 7-6=1 and the high is obvious min(k,n) i.e min(7,4) i.e 4 (4 elements can be taken at max from array 1)
+        */
     while(low <= high) {
         int cut1 = (low + high) >> 1; 
         int cut2 = k - cut1; 
