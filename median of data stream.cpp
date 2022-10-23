@@ -100,8 +100,9 @@ else {
     
     double findMedian() {
   if(max_heap.size() == min_heap.size()) return max_heap.empty()?0:( (max_heap.top()+min_heap.top())/2.0);
-        else return (max_heap.size() > min_heap.size())? max_heap.top():min_heap.top();
-    }
+        else return (max_heap.size() > min_heap.size())? max_heap.top():min_heap.top();  /// we can simply return max_heap.top ,sice max heap always contains 
+	                                                                                 ///one additonal num
+    }    
 };
 
 /**
