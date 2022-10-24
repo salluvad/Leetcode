@@ -1,3 +1,18 @@
+/// 
+Easiet solution is based on LCS and Longest pallindromic sub seq
+
+min num of insertions or deletions = N(len of string) - Lngest pallindromic subseq
+
+Longest pallindromic seb seq is derived from LSC of string and its reverse 
+
+so LCS ->LPS-> min no of instertions 
+
+https://leetcode.com/problems/longest-palindromic-subsequence/
+
+////
+
+
+
 //geeksforgeeks
 
 class Solution {
