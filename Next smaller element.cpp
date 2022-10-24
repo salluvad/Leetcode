@@ -37,6 +37,34 @@ vector<int> Solution::prevSmaller(vector<int> &nums) {
     }
 }
 
+//////.  , Previous smaller , above solution is not clear 
+
+
+vector<int> Solution::prevSmaller(vector<int> &nums) {
+
+    stack<int> stk;
+    vector<int> ans;
+
+    for(int i = 0 ; i < nums.size() ; i++){
+        while(!stk.empty() && (stk.top() >= nums[i])){
+            stk.pop();
+        }
+
+        if(stk.empty()){
+            ans.push_back(-1);
+        }else{
+            ans.push_back(stk.top());
+        }
+
+        stk.push(nums[i]);
+
+    }
+
+    return ans;
+
+}
+
+////
 
 
 
