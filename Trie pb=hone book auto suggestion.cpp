@@ -199,20 +199,20 @@ void display(string s){
    int len = s.length();
    //go through each char in str
    int i ;
-   for(i = 0 ; i<len;i++){
-   //add it to prefix
-    prefix+=s[i];
-    char LastChar = s[i];
-   TrieNode* curr = prev->child[LastChar];
-    if(curr == NULL){
-    cout << "NO RESULTS";
-    i++;
-    break;
-    }
-    cout << "suggestions based on prefix " << prefix << "are" << endl;
-    displayUtil(curr,prefix);
+   for(i = 0 ; i<len;i++) {
+      //add it to prefix
+      prefix+=s[i];
+      char LastChar = s[i];
+      TrieNode* curr = prev->child[LastChar];
+      if(curr == NULL){
+        cout << "NO RESULTS";
+        i++;
+        break;
+      }
+      cout << "suggestions based on prefix " << prefix << "are" << endl;
+      displayUtil(curr,prefix);
 
-    prev = curr;
+      prev = curr;
    }
 
    // for all char after non existing chars in trie , print No results
