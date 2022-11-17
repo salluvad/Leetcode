@@ -1,0 +1,18 @@
+class Solution {
+public:
+    int lengthOfLastWord(string s) {
+        //count from back
+        int p = s.size();
+        int len = 0;
+        
+        while(p>0){
+            p--;   /// since p is size of string , for indexing do p--
+            if(s[p]!=' '){
+                len++;
+            } else if(len>0){       // there could be trailing space , so check for that 
+                return len;
+            }
+        }
+        return len;
+    }
+};
