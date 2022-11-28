@@ -2,7 +2,16 @@ Given the head of a linked list and a value x, partition it such that all nodes 
 
 You should preserve the original relative order of the nodes in each of the two partitions.
 
-
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode() : val(0), next(nullptr) {}
+ *     ListNode(int x) : val(x), next(nullptr) {}
+ *     ListNode(int x, ListNode *next) : val(x), next(next) {}
+ * };
+ */
 class Solution {
 public:
     ListNode* partition(ListNode* head, int x) {
@@ -10,24 +19,27 @@ public:
         // and connect left to right 
          ListNode* left = new ListNode();
          ListNode* right = new ListNode();
-         ListNode* new_head = left;
-         ListNode* merge_point = right;
+         ListNode* left_head = left;
+         ListNode* right_head = right;
          ListNode* temp = head;
-        while(temp){
-            if(temp->val<x){
-                left->next = new ListNode(temp->val);
-                left = left->next;
-                
-            } else {
-                right->next = new ListNode(temp->val);
-                right = right->next;
-               
+        while(head){
+          
+            if (head->val < x){
+                left->next = head;
+                left = left -> next;
+                head = head -> next;
+                left->next = NULL;
             }
-             temp = temp->next;
+            else{
+                right->next = head;
+                right = right -> next;
+                head = head -> next;
+                right -> next = NULL;
+            }
         }
-        left->next = merge_point->next;
-        
-        return  new_head->next;
+        left -> next = right_head -> next;
+
+        return left_head -> next;
         
     }
     
