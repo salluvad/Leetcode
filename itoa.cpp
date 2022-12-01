@@ -1,3 +1,17 @@
+/* A utility function to reverse a string  */
+void reverse(char str[], int length)
+{
+    int start = 0;
+    int end = length -1;
+    while (start < end)
+    {
+        swap(*(str+start), *(str+end));
+        start++;
+        end--;
+    }
+}
+ 
+
 char* itoa(int num, char* str, int base)
 {
     int i = 0;
