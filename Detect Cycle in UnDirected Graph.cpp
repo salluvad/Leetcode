@@ -12,7 +12,7 @@ public:
         while (!q.empty())
         {
             int node = q.front().first;
-            int par = q.front().second;
+            int par = q.front().second;   //parent
             q.pop();
  
             for (auto it : adj[node])
